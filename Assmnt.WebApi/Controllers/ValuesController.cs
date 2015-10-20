@@ -10,15 +10,16 @@ using System.Web.Http;
 
 namespace Assmnt.WebApi.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class EmployeesController : ApiController
     {
         // GET api/Employees
-        public IEnumerable<Employee> Get()
+        public string Get()
         {
-            var client = new MongoClient(Settings.Default.MongoConnection);
-            var db = client.GetDatabase(Settings.Default.DBName);
-            return db.GetCollection<Employee>("Employees").AsQueryable();
+            //var client = new MongoClient(Settings.Default.MongoConnection);
+            //var db = client.GetDatabase(Settings.Default.DBName);
+            //return db.GetCollection<Employee>("Employees").AsQueryable();
+            return "Hello"; 
         }
 
         // GET api/Employees/5
